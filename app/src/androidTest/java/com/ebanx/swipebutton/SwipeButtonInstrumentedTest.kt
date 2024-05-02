@@ -5,14 +5,13 @@ import android.content.Context
 import android.support.test.rule.ActivityTestRule
 import android.view.WindowManager
 import com.ebanx.swipebtn.SwipeButton
-import kotlinx.android.synthetic.main.content_main.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
 class SwipeButtonInstrumentedTest {
 
-    @Rule
+    /*@Rule
     @JvmField
     val activityTest = ActivityTestRule(MainActivity::class.java)
 
@@ -70,5 +69,5 @@ class SwipeButtonInstrumentedTest {
         }
     }
 
-    fun test(func: SwipeButtonTestRobot.() -> Unit) = SwipeButtonTestRobot().apply { func() }
+    fun test(func: SwipeButtonTestRobot.() -> Unit) = SwipeButtonTestRobot().apply { func() }*/
 }

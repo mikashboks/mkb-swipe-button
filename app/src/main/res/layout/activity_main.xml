@@ -8,6 +8,8 @@
     tools:context=".MainActivity">
 
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/included"
+        layout="@layout/content_main" />
 
 </android.support.design.widget.CoordinatorLayout>

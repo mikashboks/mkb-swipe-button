@@ -4,34 +4,35 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import kotlinx.android.synthetic.main.content_main.*
+import com.ebanx.swipebutton.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private val binding : ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        swipeBtnEnabled.background = ContextCompat.getDrawable(this, R.drawable.shape_button2)
-        swipeBtnEnabled.setSlidingButtonBackground(ContextCompat.getDrawable(this, R.drawable.shape_rounded2))
+        binding.included.swipeBtnEnabled.background = ContextCompat.getDrawable(this, R.drawable.shape_button2)
+        binding.included.swipeBtnEnabled.setSlidingButtonBackground(ContextCompat.getDrawable(this, R.drawable.shape_rounded2))
 
-        swipeBtnEnabled.setOnStateChangeListener { active ->
+        binding.included.swipeBtnEnabled.setOnStateChangeListener { active ->
             Toast.makeText(this@MainActivity, "State: " + active, Toast.LENGTH_SHORT).show()
             if (active) {
-                swipeBtnEnabled.setButtonBackground(ContextCompat.getDrawable(this@MainActivity, R.drawable.shape_button))
+                binding.included.swipeBtnEnabled.setButtonBackground(ContextCompat.getDrawable(this@MainActivity, R.drawable.shape_button))
             } else {
-                swipeBtnEnabled.setButtonBackground(ContextCompat.getDrawable(this@MainActivity, R.drawable.shape_button3))
+                binding.included.swipeBtnEnabled.setButtonBackground(ContextCompat.getDrawable(this@MainActivity, R.drawable.shape_button3))
             }
         }
 
 //        swipeBtnDisabled.setDisabledStateNotAnimated()
-        swipeBtnEnabled.setEnabledStateNotAnimated()
+        binding.included.swipeBtnEnabled.setEnabledStateNotAnimated()
 
-        swipeNoState.setOnActiveListener { Toast.makeText(this@MainActivity, "Active!", Toast.LENGTH_SHORT).show() }
+        binding.included.swipeNoState.setOnActiveListener { Toast.makeText(this@MainActivity, "Active!", Toast.LENGTH_SHORT).show() }
 
-        toggleBtn.setOnClickListener {
-            if (!swipeBtnEnabled.isActive) {
-                swipeBtnEnabled.toggleState()
+        binding.included.toggleBtn.setOnClickListener {
+            if (!binding.included.swipeBtnEnabled.isActive) {
+                binding.included.swipeBtnEnabled.toggleState()
             }
         }
 
