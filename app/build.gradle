@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-
 android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -24,30 +23,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     namespace 'com.ebanx.swipebutton'
     lint {
         abortOnError false
         warning 'InvalidPackage'
     }
-
 }
-
 dependencies {
-    def supportVersion = "26.1.0"
-
+    def supportVersion = "28.0.0"
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     implementation "com.android.support:appcompat-v7:$supportVersion"
     implementation "com.android.support:design:$supportVersion"
     testImplementation 'junit:junit:4.12'
     implementation project(':swipe-button')
-//    compile 'com.ebanx:swipe-button:0.7.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-
 }
 repositories {
     mavenCentral()
