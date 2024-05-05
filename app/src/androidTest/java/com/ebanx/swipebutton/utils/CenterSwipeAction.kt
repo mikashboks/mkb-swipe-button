@@ -1,22 +1,23 @@
 package ebanx.com.ego.utils
 
-import android.support.test.espresso.PerformException
-import android.support.test.espresso.UiController
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.action.CoordinatesProvider
-import android.support.test.espresso.action.PrecisionDescriber
-import android.support.test.espresso.action.Swiper
-import android.support.test.espresso.matcher.ViewMatchers
-import android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
-import android.support.test.espresso.util.HumanReadables
 import android.view.View
 import android.view.ViewConfiguration
+import androidx.test.espresso.PerformException
+import androidx.test.espresso.UiController
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.action.CoordinatesProvider
+import androidx.test.espresso.action.PrecisionDescriber
+import androidx.test.espresso.action.Swiper
+import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
+import androidx.test.espresso.util.HumanReadables
 import org.hamcrest.Matcher
 
 class CenterSwipeAction(private val swiper: Swiper,
                         private val startCoordProvide: CoordinatesProvider,
                         private val endCoordProvide: CoordinatesProvider,
-                        private val precDesc: PrecisionDescriber) : ViewAction {
+                        private val precDesc: PrecisionDescriber
+) : ViewAction {
 
     override fun getConstraints(): Matcher<View> {
         return withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)

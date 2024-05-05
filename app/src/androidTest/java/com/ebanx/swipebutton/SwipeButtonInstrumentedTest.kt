@@ -2,7 +2,6 @@ package com.ebanx.swipebutton
 
 import android.app.KeyguardManager
 import android.content.Context
-import android.support.test.rule.ActivityTestRule
 import android.view.WindowManager
 import com.ebanx.swipebtn.SwipeButton
 import org.junit.Before

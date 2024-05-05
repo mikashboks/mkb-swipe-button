@@ -1,14 +1,14 @@
 package com.ebanx.swipebutton
 
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.ViewAction
-import android.support.test.espresso.action.CoordinatesProvider
-import android.support.test.espresso.action.GeneralLocation
-import android.support.test.espresso.action.Press
-import android.support.test.espresso.action.Swipe
-import android.support.test.espresso.action.ViewActions.click
-import android.support.test.espresso.action.ViewActions.swipeRight
-import android.support.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.ViewAction
+import androidx.test.espresso.action.CoordinatesProvider
+import androidx.test.espresso.action.GeneralLocation
+import androidx.test.espresso.action.Press
+import androidx.test.espresso.action.Swipe
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.swipeRight
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import ebanx.com.ego.utils.CenterSwipeAction
 
 /**
@@ -37,7 +37,8 @@ class SwipeButtonTestRobot {
             coordinates[0] = 1500f
             coordinates
         }
-        return CenterSwipeAction(Swipe.FAST,
+        return CenterSwipeAction(
+            Swipe.FAST,
                 GeneralLocation.CENTER,
                 endCoordProvide,
                 Press.FINGER)
