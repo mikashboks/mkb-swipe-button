@@ -520,4 +520,8 @@ public class SwipeButton extends RelativeLayout {
     public void setCenterTextColor(Context context, int color) {
         centerText.setTextColor(context.getResources().getColor(color));
     }
+
+    public TextView getCenterText() {
+        return centerText;
+    }
 }
